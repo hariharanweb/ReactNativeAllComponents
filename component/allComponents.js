@@ -22,6 +22,7 @@ class AllComponents extends Component {
         <Text>Radio Button:</Text>
         <MyRadio />
         <MyDatePicker />
+        <Text>Picker:</Text>
         <Picker
           selectedValue='key1'>
           <Picker.Item label="hello" value="key0" />
