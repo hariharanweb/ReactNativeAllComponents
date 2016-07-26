@@ -55,7 +55,7 @@ class MyDatePicker extends Component {
             </View>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback
-            onPress={this.showTimePicker.bind(this, 'simple')}>
+            onPress={this.showTimePicker.bind(this, 'simple1', {})}>
             <View>
               <Text>Show Pick Time</Text>
             </View>
