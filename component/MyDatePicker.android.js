@@ -4,6 +4,7 @@ import {
   View,
   SegmentedControlIOS,
   DatePickerAndroid,
+  TimePickerAndroid,
   TouchableWithoutFeedback
 } from 'react-native';
 
@@ -26,6 +27,23 @@ class MyDatePicker extends Component {
     }
   }
 
+  async showTimePicker(stateKey, options) {
+    try {
+      const {action, minute, hour} = await TimePickerAndroid.open(options);
+      var newState = {};
+      if (action === TimePickerAndroid.timeSetAction) {
+        newState[stateKey + 'Text'] = _formatTime(hour, minute);
+        newState[stateKey + 'Hour'] = hour;
+        newState[stateKey + 'Minute'] = minute;
+      } else if (action === TimePickerAndroid.dismissedAction) {
+        newState[stateKey + 'Text'] = 'dismissed';
+      }
+      this.setState(newState);
+    } catch ({code, message}) {
+      console.warn(`Error in example '${stateKey}': `, message);
+    }
+  }
+
   render() {
     return (
       <View>
@@ -33,9 +51,16 @@ class MyDatePicker extends Component {
         <TouchableWithoutFeedback
             onPress={this.showPicker.bind(this, 'simple', {date: new Date()})}>
             <View>
-              <Text>Simple Date</Text>
+              <Text>Show Date picker</Text>
             </View>
         </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback
+            onPress={this.showTimePicker.bind(this, 'simple')}>
+            <View>
+              <Text>Show Pick Time</Text>
+            </View>
+        </TouchableWithoutFeedback>
+
       </View>
     )
   }
