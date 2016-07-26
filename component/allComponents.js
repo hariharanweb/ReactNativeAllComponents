@@ -3,8 +3,9 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View,
-  TouchableWithoutFeedback
+  ScrollView,
+  TouchableWithoutFeedback,
+  Picker
 } from 'react-native';
 import MyRadio from './MyRadio'
 import MyDatePicker from './MyDatePicker'
@@ -13,7 +14,7 @@ class AllComponents extends Component {
 
   render() {
     return (
-      <View style={{flex: 1, flexDirection: 'column', width:300}}>
+      <ScrollView style={{flex: 1, flexDirection: 'column', width:300}}>
         <Text>Text field:</Text>
         <Text>
         Hello World
@@ -21,7 +22,12 @@ class AllComponents extends Component {
         <Text>Radio Button:</Text>
         <MyRadio />
         <MyDatePicker />
-      </View>
+        <Picker
+          selectedValue='key1'>
+          <Picker.Item label="hello" value="key0" />
+          <Picker.Item label="world" value="key1" />
+        </Picker>
+      </ScrollView>
     );
   }
 }
