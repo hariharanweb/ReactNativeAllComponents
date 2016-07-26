@@ -5,7 +5,8 @@ import {
   Text,
   ScrollView,
   TouchableWithoutFeedback,
-  Picker
+  Picker,
+  Switch
 } from 'react-native';
 import MyRadio from './MyRadio'
 import MyDatePicker from './MyDatePicker'
@@ -28,6 +29,10 @@ class AllComponents extends Component {
           <Picker.Item label="hello" value="key0" />
           <Picker.Item label="world" value="key1" />
         </Picker>
+        <Text>Checkbox/Switch: </Text>
+        <Switch
+          style={{marginBottom: 10}}
+          value={true} />
       </ScrollView>
     );
   }
