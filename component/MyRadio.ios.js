@@ -14,6 +14,7 @@ class MyRadio extends Component {
         <SegmentedControlIOS
           values={['One', 'Two']}
           selectedIndex={0}
+          style={{flex:1}}
           onChange={(event) => {
             this.setState({selectedIndex: event.nativeEvent.selectedSegmentIndex});
           }}
