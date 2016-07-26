@@ -16,6 +16,12 @@ class MyRadio extends Component {
           mode="date"
           onDateChange={() => {}}
         />
+        <Text>iOS Native time picker</Text>
+        <DatePickerIOS
+          date={new Date()}
+          mode="time"
+          onDateChange={() => {}}
+        />
       </View>
     )
   }
