@@ -13,7 +13,7 @@ class MyRadio extends Component {
         <Text>iOS Native radio button</Text>
         <SegmentedControlIOS
           values={['One', 'Two']}
-          selectedIndex={this.state.selectedIndex}
+          selectedIndex={0}
           onChange={(event) => {
             this.setState({selectedIndex: event.nativeEvent.selectedSegmentIndex});
           }}
